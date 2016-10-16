@@ -1,7 +1,7 @@
 {
-  "name": "webpack-ready",
+  "name": "Redux Github Explorer",
   "version": "1.0.0",
-  "description": "a ready to go project skeleton based on webpack",
+  "description": "A github explorer app made with Redux",
   "main": "index.js",
   "scripts": {
     "test": "mocha test --compilers js:babel-core/register",
@@ -12,8 +12,10 @@
     "build:prod": "webpack -p --config config/webpack.prod.config.js"
   },
   "dependencies": {
+    "material-ui": "^0.16.0",
     "react": "^15.2.1",
-    "react-dom": "^15.2.1"
+    "react-dom": "^15.2.1",
+    "redux": "^3.6.0"
   },
   "devDependencies": {
     "babel": "^6.5.2",
@@ -39,12 +41,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andrei-cacio/webpack-ready.git"
+    "url": "git+https://github.com/andrei-cacio/redux-github-explorer.git"
   },
   "author": "Andrei Cacio <andrei.cacio@yahoo.com> (http://andreicacio.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/andrei-cacio/webpack-ready/issues"
+    "url": "https://github.com/andrei-cacio/github-redux-explorer/issues"
   },
-  "homepage": "https://github.com/andrei-cacio/webpack-ready#readme"
+  "homepage": "https://github.com/andrei-cacio/github-redux-explorer#readme"
 }

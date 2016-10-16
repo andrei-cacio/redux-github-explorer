@@ -1,5 +1,5 @@
-# webpack-ready
-A full, ready to go, webpack and react project starter
+# Redux Github explorer
+*this project was made for learning purposes only*
 
 ### Motivation
 Whenever I started a new project I always repeated the same steps over and over.
@@ -8,10 +8,6 @@ So I decided to put together a quick project starter for rapid bootstraping.
 ## Usage
 
 ```bash
-$ git clone https://github.com/andrei-cacio/webpack-ready
-$ mv webpack-ready my-awesome-new-project # Optional: rename the project folder
-$ cd my-awesome-new-project
-$ git remote set-url origin https://github.com/USERNAME/OTHERREPOSITORY.git
 $ npm install
 $ npm start
 ```
@@ -20,14 +16,6 @@ Open in your favourite browser (Chrome) this url: [localhost:8080](http://localh
 Open the folder in your favourite text editor/IDE.
 
 Happy coding :coffee:!
-
-## Features
-- React support (with hot module replace support)
-- ESnext (ES2015, ES2016, etc.) support (powered by [babel](https://babeljs.io/))
-- TDD support (with [mocha](http://mochajs.org) and [chai](http://chaijs.com))
-- Test coverage support (powered by [istanbul/nyc](https://github.com/istanbuljs/nyc))
-- Code linting support (powerd by [eslint](http://eslint.org))
-- Module bundler (powered by [webpack](https://webpack.github.io/))
 
 ## NPM scripts
 
