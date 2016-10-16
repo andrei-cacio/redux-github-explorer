@@ -1,5 +1,5 @@
 {
-  "name": "Redux Github Explorer",
+  "name": "redux-github-explorer",
   "version": "1.0.0",
   "description": "A github explorer app made with Redux",
   "main": "index.js",
