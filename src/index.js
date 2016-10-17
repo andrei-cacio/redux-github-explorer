@@ -1,7 +1,7 @@
 import './style.less';
 import React from 'react';
 import { render } from 'react-dom';
-import HelloWorld from './components/hello';
+import App from './components/app';
 
-render(<HelloWorld who="world" />, document.getElementById('root'));
+render(<App />, document.getElementById('root'));
 
