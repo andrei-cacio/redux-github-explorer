@@ -1,7 +1,7 @@
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import Login from './login';
+import Login from '../components/login';
 
 const AppTheme = () => getMuiTheme({
   palette: {

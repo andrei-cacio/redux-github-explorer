@@ -8,7 +8,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 
 const style = {
   paper: {
-    height: 320,
+    height: 380,
     width: 314,
     margin: '0 auto',
     textAlign: 'center',
@@ -43,6 +43,7 @@ export default class Login extends Component {
       <Paper style={style.paper}>
         <img style={style.logo} width="200" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" />
         <TextField onKeyPress={this.handleKeyPress.bind(this)} ref={(i) => this.usernameInput = i} hintText="Username" />
+        <TextField onKeyPress={this.handleKeyPress.bind(this)} ref={(i) => this.passInput = i} type="password" hintText="Password" />
         {
           isLoading ? <CircularProgress /> :
             <RaisedButton onMouseUp={this.login.bind(this)}
