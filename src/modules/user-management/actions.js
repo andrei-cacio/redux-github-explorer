@@ -7,7 +7,6 @@ const authenticateFailed = (reason) => ({ type: AUTHENTICATE_FAILED, reason });
 
 export const authenticate = (user, pass) => dispatch => {
   const credentials = btoa(user + ':' + pass);
-
   dispatch(requestAuthenticate(true));
     fetch(API.GITHUB.auth, {
       headers: {

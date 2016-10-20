@@ -5,10 +5,8 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import CircularProgress from 'material-ui/CircularProgress';
 import { ENTER_KEY } from '../modules/core/constants';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import { authenticate } from '../modules/user-management/actions';
 import ErrorText from './error-text';
-injectTapEventPlugin();
 
 const style = {
   paper: {
@@ -17,7 +15,8 @@ const style = {
     margin: '0 auto',
     textAlign: 'center',
     position: 'relative',
-    top: '20%'
+    top: '50%',
+    transform: 'translateY(40%)'
   },
   button: {
     margin: 12,
@@ -32,7 +31,7 @@ const style = {
 class Login extends Component {
   login() {
     const { dispatch } = this.props;
-    dispatch(authenticate(this.usernameInput, this.passInput));
+    dispatch(authenticate(this.usernameInput.getValue(), this.passInput.getValue()));
   }
   handleKeyPress(e) {
     if (e.charCode === ENTER_KEY) {
