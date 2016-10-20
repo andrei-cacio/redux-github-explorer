@@ -4,7 +4,7 @@ import Card from 'material-ui/Card/Card';
 import CardHeader from 'material-ui/Card/CardHeader';
 import CardTitle from 'material-ui/Card/CardTitle';
 import CardText from 'material-ui/Card/CardText';
-// import Search from './search';
+import Search from './search';
 import List from './list';
 import { fetchRepos } from '../modules/repos/actions';
 
@@ -24,7 +24,7 @@ class Repos extends Component {
           avatar={info.avatar_url}
         />
         <CardTitle title="Github Explorer" />
-        {/*<Search/>*/}
+        <Search/>
         <CardText>
           <List items={query.length ? results : repos} />
         </CardText>
@@ -37,8 +37,8 @@ function mapStateToProps(state) {
   return {
     info: state.userInformation.info,
     repos: state.repos.all,
-    // results: repoGetters.searchResults,
-    query: state.repos.search.query
+    results: state.repos.results,
+    query: state.repos.query
   }
 }
 
