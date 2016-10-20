@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import CircularProgress from 'material-ui/CircularProgress';
 import { ENTER_KEY } from '../modules/core/constants';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import { authenticate } from '../modules/user-management/actions';
+import ErrorText from './error-text';
+injectTapEventPlugin();
 
 const style = {
   paper: {
@@ -25,17 +29,15 @@ const style = {
   }
 };
 
-export default class Login extends Component {
+class Login extends Component {
   login() {
-    console.log('enter pushed');
+    const { dispatch } = this.props;
+    dispatch(authenticate(this.usernameInput, this.passInput));
   }
   handleKeyPress(e) {
     if (e.charCode === ENTER_KEY) {
       this.login();
     }
-  }
-  componentDidMount() {
-    injectTapEventPlugin();
   }
   render() {
     const { isLoading, authFailedReason } = this.props;
@@ -58,3 +60,12 @@ export default class Login extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    isLoading: state.userInformation.isTalkingToServer,
+    authFailedReason: state.userInformation.reason
+  };
+};
+
+export default connect(mapStateToProps)(Login);

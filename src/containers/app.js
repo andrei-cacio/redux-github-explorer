@@ -9,7 +9,6 @@ const AppTheme = () => getMuiTheme({
   }
 });
 
-
 export default () => (
   <MuiThemeProvider muiTheme={AppTheme()}>
     <Login/>

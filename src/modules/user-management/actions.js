@@ -1,11 +1,11 @@
 import { AUTHENTICATED, AUTHENTICATE_FAILED, AUTHENTICATING } from './action-types';
 import { API, HTTP_CODES } from '../core/constants';
 
-const requestAuthenticate = (isAuthenticating) => ({ type: AUTHENTICATING, isAuthenticating });
+const requestAuthenticate = (isTalkingToServer) => ({ type: AUTHENTICATING, isTalkingToServer });
 const authenticateDone = (info) => ({ type: AUTHENTICATED, info });
 const authenticateFailed = (reason) => ({ type: AUTHENTICATE_FAILED, reason });
 
-export const authenticate = dispatch => (user, pass) => {
+export const authenticate = (user, pass) => dispatch => {
   const credentials = btoa(user + ':' + pass);
 
   dispatch(requestAuthenticate(true));
@@ -23,6 +23,6 @@ export const authenticate = dispatch => (user, pass) => {
       }
     })
     .then(res => dispatch(authenticateDone(res)),
-      err => dispatch(authenticateFailed(err.message));
-}
-}
+        err => dispatch(authenticateFailed(err.message))
+      );
+};
