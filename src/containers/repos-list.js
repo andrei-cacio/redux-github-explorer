@@ -21,7 +21,7 @@ class Repos extends Component {
         <CardHeader
           title={info.name}
           subtitle={info.username}
-          avatar={info.avatar}
+          avatar={info.avatar_url}
         />
         <CardTitle title="Github Explorer" />
         {/*<Search/>*/}

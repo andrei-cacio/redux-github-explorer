@@ -4,7 +4,7 @@ import { List, ListItem } from 'material-ui/List';
 import Avatar from 'material-ui/Avatar';
 import CodeIcon from 'material-ui/svg-icons/action/code';
 import ActionInfo from 'material-ui/svg-icons/action/info';
-import Highlight from './highlight';
+import Highlight from '../components/highlight';
 
 class UIListItem extends Component {
   render() {

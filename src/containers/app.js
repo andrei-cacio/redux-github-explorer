@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Login from '../components/login';
-import RepoList from '../components/repos-list';
+import RepoList from './repos-list';
 
 const AppTheme = () => getMuiTheme({
   palette: {
