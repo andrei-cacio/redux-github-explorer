@@ -1,7 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Login from '../components/login';
+import RepoList from '../components/repos-list';
 
 const AppTheme = () => getMuiTheme({
   palette: {
@@ -9,8 +11,17 @@ const AppTheme = () => getMuiTheme({
   }
 });
 
-export default () => (
-  <MuiThemeProvider muiTheme={AppTheme()}>
-    <Login/>
-  </MuiThemeProvider>
-)
+const App = props => {
+  const { isAuthenticated } = props;
+  return (
+    <MuiThemeProvider muiTheme={AppTheme()}>
+      { isAuthenticated ? <RepoList/> : <Login/> }
+    </MuiThemeProvider>
+  );
+};
+
+const mapStateToProps = state => ({
+  isAuthenticated: state.userInformation.isLoggedIn
+});
+
+export default connect(mapStateToProps)(App);

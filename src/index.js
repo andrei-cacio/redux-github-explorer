@@ -6,7 +6,7 @@ import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 import { Provider } from 'react-redux';
 import App from './containers/app';
-import rootReducer from './modules/user-management/reducers';
+import rootReducer from './reducers';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
