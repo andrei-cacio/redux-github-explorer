@@ -1,10 +1,6 @@
 # Redux Github explorer
 *this project was made for learning purposes only*
 
-### Motivation
-Whenever I started a new project I always repeated the same steps over and over.
-So I decided to put together a quick project starter for rapid bootstraping.
-
 ## Usage
 
 ```bash
