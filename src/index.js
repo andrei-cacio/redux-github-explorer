@@ -11,11 +11,11 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 const loggerMiddleware = createLogger();
-
 const store = createStore(
   rootReducer,
   applyMiddleware(thunkMiddleware, loggerMiddleware)
 );
+console.log(store);
 
 render(
   <Provider store={store}>
