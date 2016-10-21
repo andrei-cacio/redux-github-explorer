@@ -21,7 +21,7 @@ class UIListItem extends Component {
 }
 
 const mapStateToProps = state => ({
-  query: state.repos.query
+  query: state.repos.get('query')
 });
 
 const ConnectedUIListItem = connect(mapStateToProps)(UIListItem);

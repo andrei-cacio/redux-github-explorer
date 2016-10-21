@@ -36,9 +36,9 @@ class Repos extends Component {
 function mapStateToProps({ userInformation, repos }) {
   return {
     info: userInformation.get('info'),
-    repos: repos.all,
-    results: repos.results,
-    query: repos.query
+    repos: repos.get('all').toJS(),
+    results: repos.get('results').toJS(),
+    query: repos.get('query')
   }
 }
 
