@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 import { List, ListItem } from 'material-ui/List';
 import Avatar from 'material-ui/Avatar';
 import CodeIcon from 'material-ui/svg-icons/action/code';
@@ -20,20 +20,18 @@ class UIListItem extends Component {
   }
 }
 
-// function mapStateToProps() {
-//   return {
-//     query: getters.searchQuery
-//   }
-// }
+const mapStateToProps = state => ({
+  query: state.repos.query
+});
 
-// const ConnectedUIListItem = connect(mapStateToProps)(UIListItem);
+const ConnectedUIListItem = connect(mapStateToProps)(UIListItem);
 
 const UIList = React.createClass({
   render: function() {
     return (
       <List>
         { this.props.items.map(item =>
-          <UIListItem
+          <ConnectedUIListItem
             key={item.id}
             primaryText={item.name}
             secondText={item.description}

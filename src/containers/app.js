@@ -20,8 +20,8 @@ const App = props => {
   );
 };
 
-const mapStateToProps = state => ({
-  isAuthenticated: state.userInformation.isLoggedIn
+const mapStateToProps = ({ userInformation }) => ({
+  isAuthenticated: userInformation.get('isLoggedIn')
 });
 
 export default connect(mapStateToProps)(App);

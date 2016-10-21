@@ -1,4 +1,5 @@
 import './style.less';
+import Immutable from 'immutable';
 import React from 'react';
 import { render } from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
@@ -10,12 +11,25 @@ import rootReducer from './reducers';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
-const loggerMiddleware = createLogger();
+const loggerMiddleware = createLogger({
+  stateTransformer: (state) => {
+    const newState = {};
+
+    for (const i of Object.keys(state)) {
+      if (Immutable.Iterable.isIterable(state[i])) {
+        newState[i] = state[i].toJS();
+      } else {
+        newState[i] = state[i];
+      }
+    }
+
+    return newState;
+  }
+});
 const store = createStore(
   rootReducer,
   applyMiddleware(thunkMiddleware, loggerMiddleware)
 );
-console.log(store);
 
 render(
   <Provider store={store}>

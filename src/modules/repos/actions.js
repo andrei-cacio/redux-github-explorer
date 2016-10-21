@@ -5,7 +5,7 @@ const fetchedRepos = (repos) => ({ type: RECEIVE_REPOS, repos });
 export const search = (query) => ({ type: SEARCHING, query });
 
 export const fetchRepos = () => (dispatch, getState) => {
-  const username = getState().userInformation.info.login;
+  const username = getState().userInformation.getIn(['info', 'login']);
   fetch(API.GITHUB.repos(username))
     .then(res => res.json())
     .then(res => dispatch(fetchedRepos(res)));

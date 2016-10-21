@@ -60,10 +60,10 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ userInformation }) => {
   return {
-    isLoading: state.userInformation.isTalkingToServer,
-    authFailedReason: state.userInformation.reason
+    isLoading: userInformation.get('isTalkingToServer'),
+    authFailedReason: userInformation.get('reason')
   };
 };
 

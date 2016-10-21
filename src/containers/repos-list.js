@@ -33,12 +33,12 @@ class Repos extends Component {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps({ userInformation, repos }) {
   return {
-    info: state.userInformation.info,
-    repos: state.repos.all,
-    results: state.repos.results,
-    query: state.repos.query
+    info: userInformation.get('info'),
+    repos: repos.all,
+    results: repos.results,
+    query: repos.query
   }
 }
 
